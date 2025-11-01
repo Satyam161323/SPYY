@@ -1,0 +1,190 @@
+body {
+  background-color: black;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Container setup */
+.container {
+  position: relative;
+  width: 550px; /* reduced size slightly */
+  height: 550px;
+  margin: 20px auto; /* reduced margin */
+  transform: translateY(-40px); /* lift the circle upward */
+}
+
+/* Outer Glowing Big Circle */
+.big-circle {
+  position: relative;
+  width: 550px;
+  height: 550px;
+  border: 2px solid #00ffff;
+  border-radius: 50%;
+  box-shadow: 0 0 30px #00ffff, 0 0 60px #00ffff;
+  margin: 0 auto;
+}
+
+/* Center Circle */
+.center-circle {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border: 2px solid #00ffff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+  text-align: center;
+}
+
+.center-circle .infinity {
+  color: #00ffff;
+  font-size: 38px;
+  margin-top: 20px;
+  display: block;
+  text-shadow: 0 0 15px #00ffff, 0 0 40px #00ffff;
+  animation: rotateSymbol 5s linear infinite;
+}
+
+.spy {
+  color: #00ffff;
+  font-size: 22px;
+  text-shadow: 0 0 15px #00ffff, 0 0 40px #00ffff;
+}
+
+/* Small Outer Circles */
+.circle {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border: 2px solid #00ffff;
+  border-radius: 50%;
+  box-shadow: 0 0 25px #00ffff, 0 0 50px #00ffff;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Infinity inside small circles */
+.circle .infinity {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #00ffff;
+  font-size: 32px;
+  text-shadow: 0 0 10px #00ffff, 0 0 30px #00ffff;
+  animation: moveAround 4s ease-in-out infinite alternate;
+}
+
+/* Circle Positions */
+.c1 { top: 10px; left: 220px; }
+.c2 { top: 90px; right: 60px; }
+.c3 { top: 230px; right: 20px; }
+.c4 { bottom: 100px; right: 60px; }
+.c5 { bottom: 10px; left: 220px; }
+.c6 { bottom: 100px; left: 60px; }
+.c7 { top: 230px; left: 20px; }
+.c8 { top: 90px; left: 60px; }
+
+/* Animation: Infinity movement */
+@keyframes moveAround {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(10px) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg) translateX(10px) rotate(-180deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(10px) rotate(-360deg);
+  }
+}
+
+/* Rotate center infinity */
+@keyframes rotateSymbol {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* "Ask me anything" text */
+.ask-text {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 25px #00ffff, 0 0 40px #00ffff;
+  margin-top: 20px;
+  animation: glowText 2s ease-in-out infinite alternate;
+}
+
+/* Glowing text animation */
+@keyframes glowText {
+  0% { text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; opacity: 0.8; }
+  100% { text-shadow: 0 0 30px #00ffff, 0 0 60px #00ffff; opacity: 1; }
+}
+
+
+.square span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#000dff3b 40%, #6b72ff00 50%);
+  box-shadow: 0 0 50px rgb(25, 0, 255), inset 0 0 50px rgb(25, 0, 255);
+  transition: 0.5s;
+  border-radius: 38% 62% 63% 37%/41% 44% 56% 59% ;
+  animation: animate1 6s linear infinite;
+}
+
+.square span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#000dff3b 40%, #6b72ff00 50%);
+  box-shadow: 0 0 50px rgb(25, 0, 255), inset 0 0 50px rgb(25, 0, 255);
+  transition: 0.5s;
+  border-radius: 38% 62% 63% 37%/41% 44% 56% 59% ;
+  animation: animate2 4s linear infinite;
+}
+.square span:nth-child(3) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#000dff3b 40%, #6b72ff00 50%);
+  box-shadow: 0 0 50px rgb(25, 0, 255), inset 0 0 50px rgb(25, 0, 255);
+  transition: 0.5s;
+  border-radius: 38% 62% 63% 37%/41% 44% 56% 59% ;
+  animation: animate3 8s linear infinite;
+}
+@keyframes animate1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) ;
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) ;
+  }
+}
+@keyframes animate3 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) ;
+  }
+}
+
